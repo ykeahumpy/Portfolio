@@ -208,9 +208,13 @@ export default function Index() {
                     E-cho: A Web-Based Automated Complaint System
                   </h3>
                   <p className="text-xs text-black">Capstone Project</p>
-                  <div className="bg-grey-96 px-2 py-1 inline-block">
-                    <code className="text-xs font-mono text-black underline">
-                      https://echo-ecomplaint.com
+                  <div className="bg-grey-96 px-2 py-1 inline-block cursor-pointer">
+                    <code className="text-xs font-mono text-black underline"
+                    onClick={() =>
+                    window.open(
+                    "https://echo-ecomplaint.com/",
+                    "_blank")}>
+                      https://echo-ecomplaint.com/
                     </code>
                   </div>
                 </div>
