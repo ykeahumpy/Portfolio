@@ -96,23 +96,24 @@ export default function Index() {
             <div className="flex flex-wrap gap-2 pt-3.5">
               {/* Schedule a Call Button */}
               <button className="flex items-center gap-1.5 px-4 h-8 bg-black text-white text-xs font-medium">
-                <Calendar className="w-4 h-4" strokeWidth={1} />
-                <span className="underline">Schedule a Call</span>
+              <Calendar className="w-4 h-4" strokeWidth={1} />
+              <span className="underline cursor-pointer"
+                  onClick={() =>
+                  window.open(
+                    "https://www.facebook.com/gabriel.ian.mustera.2025",
+                    "_blank"
+                    )}>Schedule a Call</span>
                 <ChevronRight className="w-4 h-4" strokeWidth={1} />
               </button>
 
               {/* Send Email Button */}
               <button className="flex items-center gap-1.5 px-4 h-8 bg-white shadow-card text-black text-xs font-medium">
-                <Mail className="w-4 h-4" strokeWidth={1} />
-                <span className="underline">Send Email</span>
-              </button>
-
-              {/* Read my blog Button */}
-              <button className="flex items-center gap-1.5 px-4 h-8 bg-white shadow-card text-black text-xs font-medium flex-1 md:flex-initial">
-                <BookOpen className="w-4 h-4" strokeWidth={1} />
-                <span className="flex-1 text-left">Read my blog</span>
-                <ChevronRight className="w-4 h-4" strokeWidth={1} />
-              </button>
+              <Mail className="w-4 h-4" strokeWidth={1} />
+              <span className="underline cursor-pointer"
+                onClick={() =>
+                (window.location.href = "mailto:gabrielianmustera@gmail.com")
+                }>Send Email</span>
+            </button>
             </div>
           </div>
         </header>
@@ -221,6 +222,16 @@ export default function Index() {
                   </h3>
                   <p className="text-xs text-black">
                     Final Project - Human Computer Interaction (HCI)
+                  </p>
+                </div>
+
+                {/* Project 3 */}
+                <div className="bg-white shadow-card p-3 space-y-1">
+                  <h3 className="text-sm font-semibold text-black">
+                    POS System for Sari-sari Stores (Wire Frame)
+                  </h3>
+                  <p className="text-xs text-black">
+                    Research 1
                   </p>
                 </div>
               </div>
@@ -417,14 +428,6 @@ export default function Index() {
               </div>
             </section>
 
-            {/* A Member Of Section */}
-            <section className="space-y-2">
-              <p className="text-xs font-medium text-black">A member of</p>
-              <div className="bg-white shadow-card p-2.5 text-center">
-                <p className="text-xs text-black">---</p>
-              </div>
-            </section>
-
             {/* Social Links Section */}
             <section className="space-y-2">
               <p className="text-xs font-medium text-black">Social Links</p>
@@ -459,20 +462,6 @@ export default function Index() {
               </div>
             </section>
 
-            {/* Speaking Section */}
-            <section className="space-y-2">
-              <p className="text-xs font-medium text-black">Speaking</p>
-              <div className="bg-white shadow-card p-3 space-y-2">
-                <p className="text-[10px] text-black leading-[1.25]">
-                  Not available at the moment.
-                </p>
-                <button className="flex items-center gap-1 text-[10px] font-medium text-grey-7 underline">
-                  Get in touch
-                  <ChevronRight className="w-4 h-4 opacity-70" strokeWidth={1} />
-                </button>
-              </div>
-            </section>
-
             {/* Contact Section */}
             <section className="space-y-1">
               {/* Email */}
@@ -481,9 +470,17 @@ export default function Index() {
                   <Mail className="w-4 h-4 opacity-70" strokeWidth={1} />
                   <span className="text-[9px] font-medium text-black">Email</span>
                 </div>
-                <p className="text-[9px] font-medium text-black">
+                <p className="text-[9px] font-medium text-black cursor-pointer"
+                  onClick={() =>
+                  (window.location.href = "mailto:gabrielianmustera@gmail.com")}>
                   gabrielianmustera@gmail.com
                 </p>
+                <button className="flex items-center gap-1 text-[10px] font-medium text-grey-7 underline"
+                  onClick={() =>
+                  (window.location.href = "mailto:gabrielianmustera@gmail.com")}>
+                  Get in touch
+                  <ChevronRight className="w-4 h-4 opacity-70" strokeWidth={1} />
+                </button>
               </div>
 
               {/* Let's Talk */}
@@ -494,23 +491,13 @@ export default function Index() {
                     Let's Talk
                   </span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-[9px] font-medium text-black underline">
+                <div className="flex items-center justify-between cursor-pointer">
+                  <span className="text-[9px] font-medium text-black underline"
+                    onClick={() =>
+                    window.open(
+                    "https://www.facebook.com/gabriel.ian.mustera.2025",
+                    "_blank")}>
                     Schedule a Call
-                  </span>
-                  <ChevronRight className="w-4 h-4 opacity-70" strokeWidth={1} />
-                </div>
-              </div>
-
-              {/* Blog */}
-              <div className="bg-white shadow-card p-1.5 space-y-0.5">
-                <div className="flex items-center gap-1">
-                  <BookOpen className="w-4 h-4 opacity-70" strokeWidth={1} />
-                  <span className="text-[9px] font-medium text-black">Blog</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-[9px] font-medium text-black">
-                    Read my blog
                   </span>
                   <ChevronRight className="w-4 h-4 opacity-70" strokeWidth={1} />
                 </div>
