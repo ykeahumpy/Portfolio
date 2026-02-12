@@ -1,6 +1,9 @@
 import { url } from "inspector";
 import { useState, useEffect } from "react"; 
 import {
+  Globe, 
+  Code, 
+  Camera,
   Calendar,
   Mail,
   BookOpen,
@@ -8,14 +11,17 @@ import {
   ChevronRight,
   Award,
   ChevronDown,
-  Linkedin,
-  Github,
-  Instagram,
+  LinkedinIcon,
+  GithubIcon,
+  InstagramIcon,
   ExternalLink,
   ChevronLeft,
   Moon, 
   Sun   
 } from "lucide-react";
+import{
+  FaLinkedin, FaGithub, FaInstagram
+} from "react-icons/fa";
 import { a } from "vitest/dist/chunks/suite.d.FvehnV49.js";
 export default function Index() {
   return (
@@ -55,26 +61,6 @@ export default function Index() {
                     fill="#2563EB"
                   />
                 </svg>
-              </div>
-
-              {/* Dark Mode Toggle */}
-              <div className="flex items-center w-11 h-6 bg-gray-300 rounded-full p-0.5 relative">
-                <div className="w-5 h-5 bg-white rounded-full shadow-sm flex items-center justify-center">
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M6.00001 1.2C6.15914 1.2 6.31175 1.26321 6.42428 1.37573C6.5368 1.48825 6.60001 1.64087 6.60001 1.8V2.4C6.60001 2.55913 6.5368 2.71174 6.42428 2.82426C6.31175 2.93678 6.15914 3 6.00001 3C5.84088 3 5.68827 2.93678 5.57575 2.82426C5.46323 2.71174 5.40001 2.55913 5.40001 2.4V1.8C5.40001 1.64087 5.46323 1.48825 5.57575 1.37573C5.68827 1.26321 5.84088 1.2 6.00001 1.2ZM8.40001 6C8.40001 6.63652 8.14716 7.24697 7.69707 7.69705C7.24698 8.14714 6.63653 8.4 6.00001 8.4C5.36349 8.4 4.75304 8.14714 4.30296 7.69705C3.85287 7.24697 3.60001 6.63652 3.60001 6C3.60001 5.36348 3.85287 4.75303 4.30296 4.30294C4.75304 3.85285 5.36349 3.6 6.00001 3.6C6.63653 3.6 7.24698 3.85285 7.69707 4.30294C8.14716 4.75303 8.40001 5.36348 8.40001 6ZM8.12161 8.97L8.54581 9.3942C8.65897 9.50349 8.81054 9.56397 8.96785 9.5626C9.12517 9.56123 9.27566 9.49813 9.3869 9.38689C9.49815 9.27564 9.56125 9.12516 9.56262 8.96784C9.56398 8.81052 9.50351 8.65896 9.39421 8.5458L8.97001 8.1216C8.85685 8.0123 8.70529 7.95183 8.54797 7.95319C8.39065 7.95456 8.24017 8.01766 8.12892 8.12891C8.01768 8.24015 7.95458 8.39064 7.95321 8.54796C7.95184 8.70527 8.01232 8.85684 8.12161 8.97ZM9.39361 2.6058C9.5061 2.71831 9.56928 2.8709 9.56928 3.03C9.56928 3.1891 9.5061 3.34168 9.39361 3.4542L8.97001 3.8784C8.91466 3.9357 8.84846 3.98141 8.77526 4.01286C8.70205 4.0443 8.62332 4.06086 8.54365 4.06155C8.46399 4.06224 8.38498 4.04706 8.31124 4.01689C8.2375 3.98672 8.17051 3.94217 8.11418 3.88583C8.05784 3.8295 8.01329 3.76251 7.98312 3.68877C7.95295 3.61503 7.93777 3.53602 7.93846 3.45636C7.93915 3.37669 7.95571 3.29796 7.98715 3.22475C8.0186 3.15155 8.06431 3.08535 8.12161 3.03L8.54581 2.6058C8.65833 2.49331 8.81091 2.43012 8.97001 2.43012C9.12911 2.43012 9.2811 2.49331 9.39361 2.6058ZM10.2 6.6C10.3591 6.6 10.5118 6.53678 10.6243 6.42426C10.7368 6.31174 10.8 6.15913 10.8 6C10.8 5.84087 10.7368 5.68825 10.6243 5.57573C10.5118 5.46321 10.3591 5.4 10.2 5.4H9.60001C9.44088 5.4 9.28827 5.46321 9.17575 5.57573C9.06323 5.68825 9.00001 5.84087 9.00001 6C9.00001 6.15913 9.06323 6.31174 9.17575 6.42426C9.28827 6.53678 9.44088 6.6 9.60001 6.6H10.2ZM6.00001 9C6.15914 9 6.31175 9.06321 6.42428 9.17573C6.5368 9.28826 6.60001 9.44087 6.60001 9.6V10.2C6.60001 10.3591 6.5368 10.5117 6.42428 10.6243C6.31175 10.7368 6.15914 10.8 6.00001 10.8C5.84088 10.8 5.68827 10.7368 5.57575 10.6243C5.46323 10.5117 5.40001 10.3591 5.40001 10.2V9.6C5.40001 9.44087 5.46323 9.28826 5.57575 9.17573C5.68827 9.06321 5.84088 9 6.00001 9ZM3.03001 3.8784C3.08572 3.93414 3.15186 3.97837 3.22466 4.00856C3.29746 4.03874 3.37549 4.05429 3.4543 4.05432C3.53311 4.05435 3.61115 4.03885 3.68397 4.00872C3.75679 3.97859 3.82297 3.9344 3.87871 3.8787C3.93446 3.82299 3.97869 3.75685 4.00887 3.68405C4.03906 3.61125 4.05461 3.53322 4.05463 3.45441C4.05466 3.3756 4.03917 3.29756 4.00903 3.22474C3.9789 3.15192 3.93472 3.08574 3.87901 3.03L3.45421 2.6058C3.34105 2.4965 3.18949 2.43603 3.03217 2.43739C2.87485 2.43876 2.72437 2.50186 2.61312 2.61311C2.50188 2.72435 2.43877 2.87484 2.43741 3.03216C2.43604 3.18947 2.49652 3.34104 2.60581 3.4542L3.03001 3.8784ZM3.87841 8.97L3.45421 9.3942C3.34105 9.50349 3.18949 9.56397 3.03217 9.5626C2.87485 9.56123 2.72437 9.49813 2.61312 9.38689C2.50188 9.27564 2.43877 9.12516 2.43741 8.96784C2.43604 8.81052 2.49652 8.65896 2.60581 8.5458L3.03001 8.1216C3.14317 8.0123 3.29473 7.95183 3.45205 7.95319C3.60937 7.95456 3.75986 8.01766 3.8711 8.12891C3.98235 8.24015 4.04545 8.39064 4.04682 8.54796C4.04818 8.70527 3.98771 8.85684 3.87841 8.97ZM2.40001 6.6C2.55914 6.6 2.71175 6.53678 2.82428 6.42426C2.9368 6.31174 3.00001 6.15913 3.00001 6C3.00001 5.84087 2.9368 5.68825 2.82428 5.57573C2.71175 5.46321 2.55914 5.4 2.40001 5.4H1.80001C1.64088 5.4 1.48827 5.46321 1.37575 5.57573C1.26323 5.68825 1.20001 5.84087 1.20001 6C1.20001 6.15913 1.26323 6.31174 1.37575 6.42426C1.48827 6.53678 1.64088 6.6 1.80001 6.6H2.40001Z"
-                      fill="#6B7280"
-                    />
-                  </svg>
-                </div>
               </div>
             </div>
 
@@ -436,30 +422,35 @@ export default function Index() {
             <section className="space-y-2">
               <p className="text-xs font-medium text-black">Social Links</p>
               <div className="space-y-1">
-                <a
-                  href="www.linkedin.com/in/gabriel-ian-mustera-972641177"
-                  className="flex items-center gap-2 bg-white shadow-card p-1.5 group"
-                >
-                  <Linkedin className="w-5 h-5 opacity-70" />
-                  <span className="text-[10px] font-medium text-black underline">
+                <a href="#" className="flex items-center gap-2 bg-white shadow-card p-1.5 group">
+                  <FaLinkedin className="w-5 h-5 opacity-80" />
+                  <span className="text-[10px] font-medium text-black underline cursor-pointer"
+                  onClick={() =>
+                  window.open(
+                  "https://www.linkedin.com/in/gabrielmustera",
+                  "_blank")}>
                     LinkedIn
                   </span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-2 bg-white shadow-card p-1.5 group"
-                >
-                  <Github className="w-5 h-5 opacity-70" />
-                  <span className="text-[10px] font-medium text-black underline">
+                  </a>
+
+                <a href="#" className="flex items-center gap-2 bg-white shadow-card p-1.5 group">
+                  <FaGithub className="w-5 h-5 opacity-80" />
+                  <span className="text-[10px] font-medium text-black underline"
+                  onClick={() =>
+                  window.open(
+                  "https://www.github.com/ykeahumpy",
+                  "_blank")}>
                     GitHub
                   </span>
                 </a>
-                <a
-                  href="#"
-                  className="flex items-center gap-2 bg-white shadow-card p-1.5 group"
-                >
-                  <Instagram className="w-5 h-5 opacity-70" />
-                  <span className="text-[10px] font-medium text-black underline">
+
+                <a href="#" className="flex items-center gap-2 bg-white shadow-card p-1.5 group">
+                  <FaInstagram className="w-5 h-5 opacity-80" />
+                  <span className="text-[10px] font-medium text-black underline"
+                  onClick={() =>
+                  window.open(
+                  "https://www.instagram.com/hey.iannnn",
+                  "_blank")}>
                     Instagram
                   </span>
                 </a>
